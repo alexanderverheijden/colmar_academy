@@ -1,12 +1,98 @@
-html {
+* {
     margin: 0;
     padding: 0;
-    font-size: 16px;
     box-sizing: border-box;
 }
-
 body {
-    font-family: 'Courier New', Courier, monospace;
-    color: white;
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    color: black;
+    font-size: 16px;
+}
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+/** header desktop **/
+
+header .desktop, header .mobile {
+    width: 100vw;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content:space-between;
+}
+
+.desktop #logo {
+    font-size: 1.5rem;
+}
+
+.desktop #menu li, .desktop #logo a{
+    display: inline-block;
+    height: 2rem;
+    line-height: 2rem;
+}
+
+#logo img {
+    vertical-align: middle;
+}
+
+.desktop #menu li {
+    margin-left: 1rem;
+}
+
+header .mobile {
+    display: none;
+}
+
+@media only screen and (max-width:680px) {
+header .desktop {
+    display: none;
+}
+header .mobile {
+    display: flex;
+}
+}
+
+
+
+/** main section **/
+
+main p {
+    font-size: 14px;
+}
+
+#banner {
+    background-color: lightgray;
+    width: 100vw;
+    padding: 2rem 1.5rem;
+    display: flex;
+
+    justify-content:space-between;
+}
+
+#banner img {
+    width: 60%;
+    height: auto
+
+}
+
+#banner .txt {
+    width: calc(40% - 1.5rem);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+#banner p {
+    margin: 1.5rem 0;
+}
+
+#banner .button {
+    width: 90%;
+    background-color: grey;
+    color: white;
+    text-align: center;
+    padding: 0.5rem;
 }
