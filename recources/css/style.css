@@ -4,9 +4,21 @@
     box-sizing: border-box;
 }
 body {
-    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-family:'Raleway', Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: black;
     font-size: 16px;
+}
+
+.bold {
+    font-weight: 600;
+}
+
+#logo .bold, h1, h2, h3, h4 {
+    color: darkblue;
+}
+
+p {
+    font-size: 14px;
 }
 
 a {
@@ -41,43 +53,45 @@ header .desktop, header .mobile {
     margin-left: 1rem;
 }
 
-header .mobile {
+.mobile, header .mobile {
     display: none;
 }
 
 @media only screen and (max-width:680px) {
-header .desktop {
+.desktop {
     display: none;
 }
-header .mobile {
+.mobile {
     display: flex;
 }
 }
-
-
 
 /** main section **/
 
-main p {
-    font-size: 14px;
+#banner, #learning, .item_odd {
+    background-color: lightgray;
 }
 
-#banner {
-    background-color: lightgray;
+#information, .item_even {
+    background-color: whitesmoke;
+}
+
+#banner, #information, #learning {
     width: 100vw;
     padding: 2rem 1.5rem;
     display: flex;
-
     justify-content:space-between;
 }
 
-#banner img {
+#banner .left, #information .left {
     width: 60%;
-    height: auto
-
 }
 
-#banner .txt {
+#banner .left img, #information .left img {
+    width: 100%;
+}
+
+#banner .right, #information .right {
     width: calc(40% - 1.5rem);
     display: flex;
     justify-content: center;
@@ -85,14 +99,53 @@ main p {
     flex-direction: column;
 }
 
-#banner p {
+#banner p, #information p {
     margin: 1.5rem 0;
+}
+
+#information .right p {
+    margin: 0.5rem 0;
 }
 
 #banner .button {
     width: 90%;
-    background-color: grey;
+    background-color: darkblue;
     color: white;
     text-align: center;
     padding: 0.5rem;
+}
+
+#information .left .txt {
+    padding: 2rem 0 0 0;
+}
+
+.item_odd, .item_even {
+    height: 33.33%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.item_odd img, .item_even img {
+    width: 35%;
+    height: auto;
+}
+
+.item_odd .txt, .item_even .txt {
+    width: 65%;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.item_odd a, .item_even a {
+    font-style: italic;
+}
+
+#learning .container {
+    max-width: calc(100vw - 9rem);
+    margin: 0;
 }
