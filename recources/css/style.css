@@ -66,15 +66,6 @@ header .desktop, header .mobile {
     display: none;
 }
 
-@media only screen and (max-width:680px) {
-.desktop, header .desktop {
-    display: none;
-}
-.mobile, header .mobile {
-    display: flex;
-}
-}
-
 /** main section **/
 main, footer {
     position: relative;
@@ -96,7 +87,6 @@ main, footer {
     padding: 2rem 1.5rem;
     display: flex;
     justify-content:space-between;
-    flex-wrap: wrap;
 }
 
 #banner .left, #information .left, #thesis .left {
@@ -202,17 +192,6 @@ main, footer {
     margin-bottom: 2rem;
 }
 
-@media only screen and (max-width:680px) {
-#banner {
-    padding: 0 0 2rem 0;
-    }
-#banner .left {
-    width: 100vw;
-    }
-
-
-
-}
 /** FOOTER **/
 
 footer {
@@ -225,4 +204,84 @@ footer {
 }
 footer a {
     margin-left: 1rem;
+}
+
+@media only screen and (max-width:680px) {
+#banner, #information, #thesis, #thesis .container  {
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    width: 100vw;
+}
+
+#thesis {
+    padding-top: 2rem;
+}
+
+#thesis h2 {
+    margin-bottom: 1rem;
+}
+
+#banner .left, #thesis .left {
+    width: 100vw;
+    padding-bottom: 2rem;
+}
+#banner .right {
+    width: calc(100vw - 2rem);
+    padding-bottom: 2rem;
+}
+#banner .button {
+    width: 100%;
+}
+.item_odd, .item_even, #information .right {
+    width: 100vw;
+    background-color: whitesmoke;
+    flex-direction: column;
+}
+
+.item_odd, .item_even {
+    padding: 1rem 1rem 2rem 1rem; 
+}
+
+#information .right img, #information .right .txt {
+    width: 100%;
+}
+
+#information .right .txt {
+    margin-top: 2rem;
+}
+
+#learning {
+    padding: 2rem 1rem;
+    background-color: whitesmoke;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
+}
+
+#learning h2 {
+    margin-bottom: 0.5rem;
+}
+
+#learning .container  {
+    min-width: calc(100vw - 2rem);
+    flex-direction: column;
+}
+
+#learning .container .item {
+    width: 100%;
+    background-color: lightgray;
+    margin-top: 0.5rem;
+}
+
+footer {
+    padding: 1rem;
+    height: auto;
+}
+
+.desktop, header .desktop, #thesis .desktop {
+    display: none;
+}
+.mobile, header .mobile {
+    display: flex;
+}
 }
