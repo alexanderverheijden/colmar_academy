@@ -13,6 +13,10 @@ body {
     font-weight: 600;
 }
 
+.upper {
+    text-transform: uppercase;
+}
+
 #logo .bold, h1, h2, h3, h4 {
     color: darkblue;
 }
@@ -30,9 +34,14 @@ a {
 
 header .desktop, header .mobile {
     width: 100vw;
+    height: 4rem;
     padding: 1rem 1.5rem;
     display: flex;
     justify-content:space-between;
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    background-color: white;
 }
 
 .desktop #logo {
@@ -58,52 +67,59 @@ header .desktop, header .mobile {
 }
 
 @media only screen and (max-width:680px) {
-.desktop {
+.desktop, header .desktop {
     display: none;
 }
-.mobile {
+.mobile, header .mobile {
     display: flex;
 }
 }
 
 /** main section **/
+main, footer {
+    position: relative;
+    top: 4rem;
+}
+
+
 
 #banner, #learning, .item_odd {
     background-color: lightgray;
 }
 
-#information, .item_even {
+#information, .item_even, .item, #thesis, footer {
     background-color: whitesmoke;
 }
 
-#banner, #information, #learning {
+#banner, #information {
     width: 100vw;
     padding: 2rem 1.5rem;
     display: flex;
     justify-content:space-between;
+    flex-wrap: wrap;
 }
 
-#banner .left, #information .left {
+#banner .left, #information .left, #thesis .left {
     width: 60%;
 }
 
-#banner .left img, #information .left img {
+#banner .left img, #information .left img, #learning img, #thesis video {
     width: 100%;
 }
 
-#banner .right, #information .right {
+#banner .right, #information .right, #thesis .right {
     width: calc(40% - 1.5rem);
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
 }
 
-#banner p, #information p {
+#banner p:first-of-type, #information p:first-of-type, #thesis p {
     margin: 1.5rem 0;
 }
 
-#information .right p {
+#information .right p, #learning .txt p:first-of-type, #thesis .right p {
     margin: 0.5rem 0;
 }
 
@@ -115,12 +131,13 @@ header .desktop, header .mobile {
     padding: 0.5rem;
 }
 
-#information .left .txt {
+#information .left .txt, #thesis .left .txt {
     padding: 2rem 0 0 0;
 }
 
 .item_odd, .item_even {
     height: 33.33%;
+    width: 100%;
     padding: 1rem;
     display: flex;
     flex-direction: row;
@@ -145,7 +162,67 @@ header .desktop, header .mobile {
     font-style: italic;
 }
 
-#learning .container {
+#learning, #thesis {
+    width: 100vw;
+    display: flex;
+    padding: 2rem 1.5rem;
+    flex-direction: column;
+    justify-content:center;
+    align-items: flex-start;
+}
+
+#learning h2, #learning .container  {
     max-width: calc(100vw - 9rem);
-    margin: 0;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-content: center;
+}
+
+#learning .item {
+    width: calc(33.33% - 1.28rem);
+    display: flex;
+    flex-direction: column;
+    margin-top: 2rem;
+}
+
+#learning .item .txt {
+    margin: 1rem auto 1.5rem 1rem;
+}
+
+#thesis h2, #thesis .container {
+    max-width: calc(100vw - 1.5rem);
+    display: flex;
+    justify-content:space-between;
+    margin: 0 auto;
+}
+
+#thesis h2 {
+    margin-bottom: 2rem;
+}
+
+@media only screen and (max-width:680px) {
+#banner {
+    padding: 0 0 2rem 0;
+    }
+#banner .left {
+    width: 100vw;
+    }
+
+
+
+}
+/** FOOTER **/
+
+footer {
+    width: 100vw;
+    height: 5rem;
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid gray;
+}
+footer a {
+    margin-left: 1rem;
 }
