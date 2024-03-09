@@ -89,8 +89,17 @@ main, footer {
     background-color: whitesmoke;
 }
 
-#banner, #information, #learning, #thesis, #banner .left img, #information .left img, #learning img, #thesis video {
+#banner, #information, #learning, #thesis  {
     width: 100%;
+}
+#banner .left img, #information .left img, #learning img, #thesis video {
+    width: 100%;
+    transition: transform 0.2s, opacity 0.2s;
+}
+
+#information .right img:hover, #learning img:hover, #thesis .right img:hover {
+    transform:scale(1.02);
+    opacity: 0.7;
 }
 #banner .content, #information .content {
     padding: 2rem 1.5rem;
@@ -142,6 +151,7 @@ main, footer {
 .item_odd img, .item_even img {
     width: 35%;
     height: auto;
+    transition: transform 0.2s, opacity 0.2s;
 }
 
 .item_odd .txt, .item_even .txt {
