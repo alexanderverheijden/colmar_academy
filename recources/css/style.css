@@ -3,11 +3,17 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     font-family:'Raleway', Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     color: black;
     font-size: 16px;
+    background-color: grey;
+}
+.content {
     max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto
 }
 
 .bold {
@@ -32,17 +38,19 @@ a {
 }
 
 /** header desktop **/
-
-header .desktop, header .mobile {
-    width: 100vw;
+header {
+    width: 100%;
     height: 4rem;
     padding: 1rem 1.5rem;
-    display: flex;
-    justify-content:space-between;
-    position: fixed;
-    top: 0;
     z-index: 99;
     background-color: white;
+    position: fixed;
+    top: 0;
+}
+
+header .desktop, header .mobile {    
+    display: flex;
+    justify-content:space-between;
 }
 
 .desktop #logo {
@@ -73,8 +81,6 @@ main, footer {
     top: 4rem;
 }
 
-
-
 #banner, #learning, .item_odd {
     background-color: lightgray;
 }
@@ -83,8 +89,10 @@ main, footer {
     background-color: whitesmoke;
 }
 
-#banner, #information {
-    width: 100vw;
+#banner, #information, #learning, #thesis, #banner .left img, #information .left img, #learning img, #thesis video {
+    width: 100%;
+}
+#banner .content, #information .content {
     padding: 2rem 1.5rem;
     display: flex;
     justify-content:space-between;
@@ -92,10 +100,6 @@ main, footer {
 
 #banner .left, #information .left, #thesis .left {
     width: 60%;
-}
-
-#banner .left img, #information .left img, #learning img, #thesis video {
-    width: 100%;
 }
 
 #banner .right, #information .right, #thesis .right {
@@ -153,8 +157,7 @@ main, footer {
     font-style: italic;
 }
 
-#learning, #thesis {
-    width: 100vw;
+#learning .content, #thesis .content {
     display: flex;
     padding: 2rem 1.5rem;
     flex-direction: column;
@@ -163,7 +166,7 @@ main, footer {
 }
 
 #learning h2, #learning .container  {
-    max-width: calc(100vw - 9rem);
+    max-width: calc(100% - 9rem);
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
@@ -183,7 +186,7 @@ main, footer {
 }
 
 #thesis h2, #thesis .container {
-    max-width: calc(100vw - 1.5rem);
+    max-width: calc(100% - 1.5rem);
     display: flex;
     justify-content:space-between;
     margin: 0 auto;
@@ -196,23 +199,27 @@ main, footer {
 /** FOOTER **/
 
 footer {
-    width: 100vw;
+    width: 100%;
     height: 5rem;
+    border-top: 1px solid gray;
+}
+
+footer .content {
     padding: 1rem 1.5rem;
     display: flex;
     justify-content: space-between;
-    border-top: 1px solid gray;
 }
+
 footer a {
     margin-left: 1rem;
 }
 
 @media only screen and (max-width:680px) {
-#banner, #information, #thesis, #thesis .container  {
+#banner .content, #information .content, #thesis .content, #thesis .container  {
     padding: 0;
     flex-direction: column;
     align-items: center;
-    width: 100vw;
+    width: 100%;
 }
 
 #thesis {
@@ -224,18 +231,18 @@ footer a {
 }
 
 #banner .left, #thesis .left {
-    width: 100vw;
+    width: 100%;
     padding-bottom: 2rem;
 }
 #banner .right {
-    width: calc(100vw - 2rem);
+    width: calc(100% - 2rem);
     padding-bottom: 2rem;
 }
 #banner .button {
     width: 100%;
 }
 .item_odd, .item_even, #information .right {
-    width: 100vw;
+    width: 100%;
     background-color: whitesmoke;
     flex-direction: column;
 }
@@ -252,7 +259,7 @@ footer a {
     margin-top: 2rem;
 }
 
-#learning {
+#learning .content {
     padding: 2rem 1rem;
     background-color: whitesmoke;
     border-top: 1px solid lightgray;
@@ -264,7 +271,7 @@ footer a {
 }
 
 #learning .container  {
-    min-width: calc(100vw - 2rem);
+    min-width: 100%;
     flex-direction: column;
 }
 
